@@ -11,6 +11,7 @@
 <body>
     <header class="koko">
         <div class="wrapper">
+            <div class="menu" id="menu">
             <div class="logo">
                 <a href="index.html"><img src="logo.png"></a>
             </div>
@@ -19,8 +20,9 @@
                 <li><a href="tutorials.html">Tutorials</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="singin.html">Sign In</a></li>
+                <li><a href="signin.html">Sign In</a></li>
             </ul>
+        </div>
         </div>
         <div class="welcome-text">
             <h1>Code Hub</h1>
@@ -83,21 +85,96 @@
                 <a id="button1" href="#">learn more</a>
             </div>
     </div>
+    <div class="aboutform">
+        <div class="firstext">
+            <span>Talk to us</span>
+            <p>whether you need a full product, consultation, tech investments or an <br> extended team, our experts will help you find the best solutions.</p>
+        </div>
+        <div class="secondext"> 
+            <label>Your name <br>
+                <input id="cname" type="text"> <br>
+            </label>
+            <label>Email address <br>
+                <input id="cemail" type="email"> <br>
+            </label>
+            <label>How can we help you? <br>
+                <textarea id="comment" cols="30" rows="10"></textarea><br>
+            </label>
+            <button id="we">Submit</button>
+            <p id="the">we'll never share your email to anyone else</p>
+        </div>
+    </div>
 </section>
+
+<p class="header">Student Comment So Far</p>
+<div class="all">
+    <div class="html">
+        <p id="head">Angela Yu</p>
+        <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas consequuntur sunt officiis dolorum optio quasi illo reiciendis dolore beatae hic, dicta ut commodi ea iure aliquam sit voluptas voluptatibus ipsa.</p>
+    </div>
+    <div class="css">
+            <p id="head">Mosh Hamedani</p>
+            <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas consequuntur sunt officiis dolorum optio quasi illo reiciendis dolore beatae hic, dicta ut commodi ea iure aliquam sit voluptas voluptatibus ipsa.</p>
+    </div>
+    <div class="js">
+            <p id="head">Damicode</p>
+            <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas consequuntur sunt officiis dolorum optio quasi illo reiciendis dolore beatae hic, dicta ut commodi ea iure aliquam sit voluptas voluptatibus ipsa.</p>
+        </div>
+        </div>
+        <div id="commentpage" class="all">
+            <div class="html">
+                <p class="ionware" id="head"></p>
+                <p class="comment1" id="text"></p>
+            </div>
+            <div class="css">
+                    <p id="head cname1"></p>
+                    <p id="text comment2"></p>
+            </div>
+            <div class="js">
+                    <p id="head"></p>
+                    <p id="text"></p>
+                </div>
+                </div>
+                   
+           
             <section id="contact-us" id="header">
-                    <p id="contact">For more information about Us</p>
-                    <p id="contact">you can follow us on</p>
-                    <div id="all">
-                    <p id="social"> <a href="www.facebook.com" target="_blank" ><img id="img" src="facebook.png" alt=""></a></p>
-                    <p id="social"> <a href="www.twitter.com" target="_blank" ><img id="img" src="twitter.png" alt=""></a></p>
-                    <p id="social"> <a href="www.github.com" target="_blank" ><img id="img" src="download (2).png" alt=""></a></p>
-                    </div>
-            </section> <br>
+                <p id="contact">For more information about Us</p>
+                <p id="contact">you can follow us on</p>
+                <div id="all">
+                <p id="social"> <a href="www.facebook.com" target="_blank" ><img id="img" src="facebook.png" alt=""></a></p>
+                <p id="social"> <a href="www.twitter.com" target="_blank" ><img id="img" src="twitter.png" alt=""></a></p>
+                <p id="social"> <a href="www.github.com" target="_blank" ><img id="img" src="download (2).png" alt=""></a></p>
+                </div>
+        </section> <br>
+            <div class="scroll"><a href="#menu"><img id="scrollup" src="images.png" alt="scrollup"></a></div>
 <div class="footer">
     <footer>
         CODE HUB &copy All right reserved 2019
 
     </footer>
+    <script>
+let cname = document.querySelector('#cname');
+let comment = document.querySelector('#comment');
+let email = document.querySelector('#cemail');
+function thecomment(){
+    let commentpage = document.querySelector('#commentpage');
+    if(cname.value == '' && comment.value == '')
+        alert('pls kindly write the normal comment');
+    else
+    {
+        commentpage.style.display = 'block';
+        document.querySelector('.ionware').textContent = cname.value;
+        document.querySelector('.comment1').textContent = comment.value;
+        cname.value = '';
+        comment.value = '';
+        email.value = '';
+   } 
+}
+
+let submit = document.querySelector('#we');
+
+submit.addEventListener('click', thecomment);
+    </script>
 </div>
 </body>
 </html>
